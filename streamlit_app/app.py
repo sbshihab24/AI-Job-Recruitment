@@ -236,35 +236,13 @@ if st.session_state["candidate"] is not None:
 
         st.subheader("AI Candidate Score")
 
-        c1, c2, c3 = st.columns(3)
-
-        c1.metric(
-            "Overall Score",
-            f"{score.overall_score:.1f}"
-        )
-
-        c2.metric(
-            "Fit Category",
-            str(score.fit_category)
-        )
-
-        c3.metric(
-            "AI Confidence",
-            f"{score.ai_confidence:.1f}%"
-        )
-
-        st.divider()
-
         st.subheader("Matching Details")
 
         metrics = [
             ("Skills Match", score.skills_match),
             ("Experience Match", score.experience_match),
-            ("Education Match", score.education_match),
             ("Salary Alignment", score.salary_alignment),
             ("Location Alignment", score.location_alignment),
-            ("Language Match", score.language_match),
-            ("Certification Match", score.certification_match),
         ]
 
         for title, item in metrics:
@@ -282,18 +260,6 @@ if st.session_state["candidate"] is not None:
                 st.write(
                     f"**Reason:** {item.reason}"
                 )
-
-        st.divider()
-
-        st.subheader("Recruiter Summary")
-
-        st.info(
-            score.recruiter_summary
-        )
-
-        st.success(
-            score.recommended_next_action
-        )
 
     # ---------------------------------
     # Explanation
