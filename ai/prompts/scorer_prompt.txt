@@ -10,16 +10,6 @@ Never omit a field.
 
 If information is unavailable, still return the field using an appropriate default value.
 
-Rules:
-
-* Overall score must be between 0 and 100.
-* AI confidence must be between 0 and 100.
-* Fit category must be one of:
-
-  * High
-  * Medium
-  * Low
-
 For every matching category return an object containing:
 
 * matched (true or false)
@@ -32,17 +22,6 @@ Required matching categories:
 * experience_match
 * salary_alignment
 * location_alignment
-* education_match
-* language_match
-* certification_match
-
-Also return:
-
-* key_strengths (array)
-* missing_requirements (array)
-* red_flags (array)
-* recruiter_summary (string)
-* recommended_next_action (string)
 
 If a category cannot be evaluated:
 
